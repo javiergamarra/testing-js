@@ -1,0 +1,18 @@
+{
+  "devDependencies": {
+    "jest": "^28.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "workspaces": [
+    "./0 - jest works/*",
+    "./1 - what is this/*",
+    "./2 - spock/*",
+    "./3 - gilded rose/*",
+    "./4 - configurar jest/*",
+    "./5 - matchers/*",
+    "./6 - diamonds/*",
+    "./7 - nuestro jest/*"
+  ]
+}
