@@ -1,17 +1,18 @@
 async function mine(s) {
-  let diamonds = 0;
+  const promises = [];
 
   while (s.includes('<>')) {
-    await new Promise((resolve) => {
-      setTimeout(() => {
-        diamonds += 1;
-        s = s.replace('<>', '');
-        resolve();
-      }, 100);
-    });
+    s = s.replace('<>', '');
+    promises.push(
+      new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(1);
+        }, 100);
+      }),
+    );
   }
 
-  return diamonds;
+  return (await Promise.all(promises)).length;
 }
 
 test('we can mine diamonds', async () => {
