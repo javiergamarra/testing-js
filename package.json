@@ -1,18 +1,23 @@
 {
   "devDependencies": {
-    "jest": "^28.1.0"
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.4.6",
+    "husky": "^8.0.1",
+    "jest": "^28.1.0",
+    "lint-staged": "^12.5.0",
+    "prettier": "2.6.2"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "prepare": "husky install"
   },
   "workspaces": [
-    "./0 - jest works/*",
-    "./1 - what is this/*",
-    "./2 - spock/*",
-    "./3 - gilded rose/*",
-    "./4 - configurar jest/*",
-    "./5 - matchers/*",
-    "./6 - diamonds/*",
-    "./7 - nuestro jest/*"
-  ]
+    "./*"
+  ],
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
 }
