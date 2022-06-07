@@ -1,4 +1,5 @@
 {
+  "name": "diamonds",
   "scripts": {
     "test": "jest"
   }

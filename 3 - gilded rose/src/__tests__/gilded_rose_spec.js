@@ -1,4 +1,4 @@
-import { Shop, Item } from '../gilded_rose';
+import { Item, Shop } from '../gilded_rose';
 
 describe('Gilded Rose', () => {
   it('should foo', () => {

@@ -4,7 +4,7 @@ async function mine(s) {
   while (s.includes('<>')) {
     await new Promise((resolve) => {
       setTimeout(() => {
-        diamonds = +1;
+        diamonds += 1;
         s = s.replace('<>', '');
         resolve();
       }, 100);

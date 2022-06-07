@@ -1,4 +1,5 @@
 {
+  "name": "what-is-this",
   "scripts": {
     "test": "jest"
   }

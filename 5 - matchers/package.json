@@ -1,4 +1,5 @@
 {
+  "name": "matchers",
   "scripts": {
     "test": "jest"
   }

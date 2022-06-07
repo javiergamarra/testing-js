@@ -1,4 +1,5 @@
 {
+  "name": "configure-jest",
   "scripts": {
     "test": "jest",
     "build": "babel src -d dist"
