@@ -2,5 +2,8 @@
   "name": "install-prettier",
   "scripts": {
     "test": "jest"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.2"
   }
 }
