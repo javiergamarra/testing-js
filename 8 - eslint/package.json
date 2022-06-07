@@ -2,5 +2,8 @@
   "name": "install-eslint",
   "scripts": {
     "test": "jest"
+  },
+  "devDependencies": {
+    "eslint": "^8.17.0"
   }
 }
