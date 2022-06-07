@@ -8,7 +8,7 @@ async function mine(s) {
         setTimeout(() => {
           resolve(1);
         }, 100);
-      }),
+      })
     );
   }
 
