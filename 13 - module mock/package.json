@@ -1,0 +1,6 @@
+{
+  "name": "module-mock",
+  "scripts": {
+    "test": "jest"
+  }
+}
