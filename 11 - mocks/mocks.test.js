@@ -38,7 +38,7 @@ class ChangesetsController {
 }
 
 describe("mocks pueden devolver valores de prueba", () => {
-  let getAllChangesetsServiceMock = null; // FIXME
+  let getAllChangesetsServiceMock = jest.fn().mockReturnValue({ results: [] });
 
   test("podemos devolver 0 resultados", async () => {
     const controller = new ChangesetsController({ proceed: getAllChangesetsServiceMock });
@@ -52,7 +52,19 @@ describe("mocks pueden devolver valores de prueba", () => {
   });
 
   test("podemos transformar resultados", async () => {
-    getAllChangesetsServiceMock = null; // FIXME
+    getAllChangesetsServiceMock = jest.fn().mockReturnValue({
+      results: [
+        {
+          id: 1,
+          name: "name",
+          guid: "guid",
+          branch: "branch",
+          comment: "comment",
+          author: "author",
+          date: new Date("2020/01/01")
+        }
+      ]
+    });
 
     const controller = new ChangesetsController({ proceed: getAllChangesetsServiceMock });
 
