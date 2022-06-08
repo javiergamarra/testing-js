@@ -1,0 +1,6 @@
+{
+  "name": "game-of-life",
+  "scripts": {
+    "test": "jest"
+  }
+}
