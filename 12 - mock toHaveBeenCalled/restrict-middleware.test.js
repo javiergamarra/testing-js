@@ -33,28 +33,28 @@ class RestrictOrganizationMiddleware {
 let configService;
 
 beforeAll(() => {
-  configService = null; // FIXME
+  configService = { get: jest.fn().mockReturnValue("production") };
 });
 
 describe("RestrictOrganizationMiddleware limits which organizations can write", () => {
   test("a valid organization can write", () => {
     const middleware = new RestrictOrganizationMiddleware(configService);
 
-    const next = null; // FIXME
+    const next = jest.fn();
 
-    middleware.use({ path: "/organizations/furps" }, null, next); // FIXME
+    middleware.use({ path: "/organizations/furps" }, jest.fn(), next);
 
-    // expect(configService.get.mock.calls.).toEqual(2); // FIXME
-    // expect(next.mock.calls.length).toEqual(1); // FIXME
-    // expect(next.mock.calls[0].length).toEqual(0); // FIXME
+    expect(configService.get.mock.calls.length).toEqual(2);
+    expect(next.mock.calls.length).toEqual(1);
+    expect(next.mock.calls[0].length).toEqual(0);
   });
 
   test("any organization can write in the local environment", () => {
     const middleware = new RestrictOrganizationMiddleware({ get: jest.fn().mockReturnValue("local") });
 
-    const next = null; // FIXME
+    const next = jest.fn();
 
-    middleware.use({ path: "/organizations/furps" }, null, next);  // FIXME
+    middleware.use({ path: "/organizations/furps" }, jest.fn(), next);
 
     expect(next).toHaveBeenCalledTimes(1);
   });
@@ -62,11 +62,11 @@ describe("RestrictOrganizationMiddleware limits which organizations can write", 
   test("a random organization can not write", () => {
     const middleware = new RestrictOrganizationMiddleware({ get: jest.fn().mockReturnValue("production") });
 
-    const next = null; // FIXME
+    const next = jest.fn();
 
-    middleware.use({ path: "/organizations/non-writable-org" }, jest.fn(), next); // FIXME
+    const fn = () => middleware.use({ path: "/organizations/non-writable-org" }, jest.fn(), next);
 
-    expect(null).toThrowError( // FIXME
+    expect(fn).toThrowError(
       new Error(
         `Only the ${RestrictOrganizationMiddleware.organizationsRegex} organization is allowed on write operation`
       )
