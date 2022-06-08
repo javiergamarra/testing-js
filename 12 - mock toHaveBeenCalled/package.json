@@ -1,0 +1,6 @@
+{
+  "name": "mock-toHaveBeenCalled",
+  "scripts": {
+    "test": "jest"
+  }
+}
