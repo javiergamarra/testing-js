@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`snapshots capturan el valor inicial guardamos el valor 1`] = `
+Object {
+  "key": "valu",
+}
+`;
+
+exports[`snapshots capturan el valor inicial guardamos el valor 2`] = `
+Object {
+  "key": "valu",
+  "nuevaKey": "nuevoVal2or",
+}
+`;
