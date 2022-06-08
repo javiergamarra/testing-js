@@ -32,14 +32,24 @@ export class RestrictOrganizationMiddleware {
   }
 }
 
-// jest.m... //FIXME
+// jest.mock("./extra-service", () => jest.fn().mockImplementation(() => ({
+//   sayHi: jest.fn().mockReturnValue("nada")
+// })));
+
+jest.mock("./extra-service", function() {
+  return ({
+    sayHi: jest.fn().mockReturnValue("adios")
+  }
+);
+
 
 describe("ConfigService can be mocked", () => {
   let configService;
 
   beforeEach(() => {
     configService = new ConfigService();
-    // configService.get... //FIXME
+    console.log(configService.sayHi());
+    // configService.get.mockReturnValue("production");
   });
 
   test("a valid organization can write", () => {

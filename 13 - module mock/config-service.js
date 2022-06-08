@@ -1,3 +1,5 @@
+import { ExtraService } from "./extra-service";
+
 class ConfigService {
   map;
 
@@ -7,6 +9,10 @@ class ConfigService {
 
   get(key) {
     return this.map.get(key);
+  }
+
+  sayHi() {
+    return new ExtraService().sayHi();
   }
 }
 
