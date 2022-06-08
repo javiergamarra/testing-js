@@ -1,0 +1,6 @@
+{
+  "name": "debug-and-watch",
+  "scripts": {
+    "test": "jest"
+  }
+}
