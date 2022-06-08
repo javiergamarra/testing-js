@@ -3,13 +3,16 @@ import { RestrictOrganizationMiddleware } from "./restrict-middleware";
 
 describe("ConfigService can be spied", () => {
   const configService = new ConfigService(
-    // FIXME
+    new Map([
+      ["NODE_ENV", "local"],
+      ["PLASTIC_DB_HOST", "localhost"]
+    ])
   );
 
   test("an invalid organization can write in local environment", () => {
     const middleware = new RestrictOrganizationMiddleware(configService);
 
-    // const spy = //FIXME
+    const spy = jest.spyOn(configService, "get");
 
     const next = jest.fn();
 
