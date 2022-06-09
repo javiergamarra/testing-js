@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing with snapshots appears when clicking the button 1`] = `
+<div
+  className="App"
+>
+  <button
+    onClick={[Function]}
+  >
+    Enable
+  </button>
+</div>
+`;
+
+exports[`testing with snapshots appears when clicking the button 2`] = `
+<div
+  className="App"
+>
+  <button
+    onClick={[Function]}
+  >
+    Enable
+  </button>
+  <div>
+    enabled
+  </div>
+</div>
+`;
