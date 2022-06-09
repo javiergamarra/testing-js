@@ -5,9 +5,25 @@ exports[`testing with snapshots appears when clicking the button 1`] = `
   className="App"
 >
   <button
+    className="button"
     onClick={[Function]}
+    style={
+      Object {
+        "fontSize": undefined,
+      }
+    }
   >
     Enable
+  </button>
+  <input
+    id="name"
+    type="text"
+  />
+  <p />
+  <button
+    onClick={[Function]}
+  >
+    Call API
   </button>
 </div>
 `;
@@ -17,12 +33,28 @@ exports[`testing with snapshots appears when clicking the button 2`] = `
   className="App"
 >
   <button
+    className="button"
     onClick={[Function]}
+    style={
+      Object {
+        "fontSize": undefined,
+      }
+    }
   >
     Enable
   </button>
   <div>
     enabled
   </div>
+  <input
+    id="name"
+    type="text"
+  />
+  <p />
+  <button
+    onClick={[Function]}
+  >
+    Call API
+  </button>
 </div>
 `;

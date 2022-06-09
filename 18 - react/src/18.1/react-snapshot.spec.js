@@ -1,5 +1,5 @@
 import App from "../App";
-import renderer from "react-test-renderer";
+import renderer, { act } from "react-test-renderer";
 
 describe("testing with snapshots", () => {
   test("appears when clicking the button", async () => {
@@ -7,8 +7,11 @@ describe("testing with snapshots", () => {
 
     expect(component.toJSON()).toMatchSnapshot();
 
-    const button = await component.root.findByType("button");
-    button.props.onClick();
+    const button = await component.root.findAllByType("button")[0];
+
+    act(() => {
+      button.props.onClick();
+    });
 
     expect(component.toJSON()).toMatchSnapshot();
   });

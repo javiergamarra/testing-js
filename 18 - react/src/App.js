@@ -9,19 +9,27 @@ function App(props) {
     setEnabled(!enabled);
   };
 
-  return (
-    <div className="App">
+  const onClickRequest = () => {
+    fetch("https://jsonplaceholder.typicode.com/todos/1").then(
+      x => {
+        console.log(x.json());
+      }
+    );
+  };
 
-      <button className="button" onClick={onClick}>Enable</button>
+  return (<div className="App">
 
-      {enabled && (<div>enabled</div>)}
+    <button className="button" onClick={onClick} style={{ "fontSize": props.fontSize }}>Enable</button>
 
-      <input id="name"></input>
+    {enabled && (<div>enabled</div>)}
 
-      {props.value}
+    <input id="name" type="text"></input>
 
-    </div>
-  );
+    <p>{props.value}</p>
+
+    <button onClick={onClickRequest}>Call API</button>
+
+  </div>);
 }
 
 export default App;

@@ -43,7 +43,7 @@ export const LoginForm = () => {
 
   return (<form onSubmit={handleFormSubmit}>
     <div>
-      <label htmlFor="usernam">Username:</label>
+      <label htmlFor="username">Username:</label>
       <input
         id="username"
         name="username"
