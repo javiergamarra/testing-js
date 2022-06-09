@@ -1,4 +1,4 @@
-import { ExtraService } from "./extra-service";
+import ExtraService from "./extra-service";
 
 class ConfigService {
   map;
