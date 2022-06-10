@@ -4,11 +4,19 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["airbnb-base", "plugin:jest/recommended", "prettier"],
+  "extends": [
+    "airbnb-base",
+    "plugin:jest/recommended",
+    "prettier",
+    "plugin:cypress/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["jest"],
+  "plugins": [
+    "jest",
+    "cypress"
+  ],
   "rules": {}
 }
